@@ -1,0 +1,4 @@
+python generate_examples.py --input videos/fake1.mp4 --output dataset/fake --detector face_detector --skip 4
+python generate_examples.py --input videos/real1.mp4 --output dataset/real --detector face_detector --skip 4
+python train.py --dataset dataset --model liveness.model --lbe label_encoder.pickle
+python liveness_test.py --model liveness.model --lbe label_encoder.pickle --detector face_detector
